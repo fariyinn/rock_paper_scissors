@@ -48,7 +48,7 @@ function game() {
         if (playerScore > computerScore) {
             console.log('Winner! You got the most points out of 5 games!');
         } else {
-        console.log('Aww! You got the least points out of 5 games');
+            console.log('Aww! You got the least points out of 5 games');
         }
     }
 }

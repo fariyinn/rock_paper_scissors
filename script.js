@@ -34,23 +34,4 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    for (let currentGame = 1; currentGame <= 5; currentGame++) {
-        let playerSelection = prompt('Rock, Paper, or Scissors?').toLowerCase();
-        const computerSelection = computerPlay();
-
-        console.log(playRound(playerSelection, computerSelection));
-        console.log('Your Score: ' + playerScore);
-        console.log('Computer\'s Score: ' + computerScore);
-    }
-
-    if (currentGame = 5) {
-        if (playerScore > computerScore) {
-            console.log('Winner! You got the most points out of 5 games!');
-        } else {
-            console.log('Aww! You got the least points out of 5 games');
-        }
-    }
-}
-
 game();

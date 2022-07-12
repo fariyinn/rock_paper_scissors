@@ -9,6 +9,9 @@ const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
+        if (playerScore == 5 || computerScore == 5) {
+            return;
+        }
         playRound(button.id, computerPlay());
     });
 });

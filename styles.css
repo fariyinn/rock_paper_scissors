@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+
+:root {
+    background-color: white;
+    --main-icon-color: #623412;
+    font-family:'Yanone Kaffeesatz', helvetica, sans-serif;
+    --main-font-size: 25px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    color: #88AADD;
+    font-size: 125px;
+    text-shadow: 4px 4px 0 #623412, -4px -4px 0 #BD9A7A;
+}
+
+.containerButtons {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    padding: 20px 40px;
+    background-color: var(--main-icon-color);
+    color: white;
+    font-size: var(--main-font-size);
+    border-radius:40px;
+}
+
+button:hover {
+    transition: transform 0.5s;
+    background-color:#BD9A7A;
+}
+
+.containerScores {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 40px 40px;
+    margin: 25px;
+    font-size: var(--main-font-size);
+}
+
+.containerResults {
+    display: flex;
+    justify-content: center;
+    font-size: var(--main-font-size);
+}
+
+.containerGameOver {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    font-size: 75px;
+}
+
+footer {
+    padding: 20px 20px;
+    margin-top: auto;
+    font-size: var(--main-font-size);
+    text-align: center;
+}
+
+#github {
+    padding: 4px;
+    color: var(--main-icon-color);
+    font-size: var(--main-font-size);
+    transition: transform 1s;
+}
+  
+#github:hover {
+    transform: rotate(180deg) scale(1.5);
+    color:#BD9A7A;
+}

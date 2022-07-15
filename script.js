@@ -16,29 +16,31 @@ buttons.forEach((button) => {
     });
 });
 
-// UI - container
-const container = document.querySelector('.container');
+// UI - containers
+const containerScores = document.querySelector('.containerScores');
+const containerResults = document.querySelector('.containerResults');
+const containerGameOver = document.querySelector('.containerGameOver');
 
-// UI - score tracker
+// UI - score trackers
 const playerScoreTracker = document.createElement('div');
 playerScoreTracker.classList.add('playerScoreTracker');
 playerScoreTracker.textContent = 'Your score: ' + playerScore;
-container.appendChild(playerScoreTracker);
+containerScores.appendChild(playerScoreTracker);
 
 const computerScoreTracker = document.createElement('div');
 computerScoreTracker.classList.add('computerScoreTracker');
 computerScoreTracker.textContent = 'Computer score: ' + computerScore;
-container.appendChild(computerScoreTracker);
+containerScores.appendChild(computerScoreTracker);
 
 // UI - results
 const result = document.createElement('div');
 result.classList.add('result');
-container.appendChild(result);
+containerResults.appendChild(result);
 
 // UI - game over
 const gameOver = document.createElement('div');
 gameOver.classList.add('gameOver');
-container.appendChild(gameOver);
+containerGameOver.appendChild(gameOver);
 
 // functions
 function computerPlay() {

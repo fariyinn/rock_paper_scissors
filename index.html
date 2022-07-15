@@ -3,17 +3,35 @@
     <head>
         <meta charset = "UTF-8">
         <title>Rock Paper Scissors!</title>
-        <link rel = "stylesheet" src = "./styles.css">
+
+        <link rel = "stylesheet" href = "./styles.css">
         <link rel = "icon" href = "./favicon.ico">
+        <script src="https://kit.fontawesome.com/93fc56fb23.js" crossorigin="anonymous"></script>
     </head>
-
     <body>
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+        <h1 class = "header">Rock, Paper, or Scissors?</h1>
 
-        <div class="container"></div>
+        <div class="containerButtons">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
 
-        <script src = "./script.js" defer></script>
+        <div class="containerScores"></div>
+        <div class="containerResults"></div>
+        <div class="containerGameOver"></div>
+
+        <script src = "./script.js"></script>
+
+        <footer>
+            <p> fariyinn &copy;
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>
+                <a href="https://github.com/fariyinn" target="_blank">
+                    <i id = "github" class="fa-brands fa-github-alt"></i>
+                </a>
+            </p>
+        </footer>
     </body>
 </html>

@@ -4,7 +4,7 @@
     background-color: white;
     --main-icon-color: #623412;
     font-family:'Yanone Kaffeesatz', helvetica, sans-serif;
-    --main-font-size: 25px;
+    --main-font-size: 30px;
 }
 
 body {
@@ -21,22 +21,27 @@ body {
     color: #88AADD;
     font-size: 125px;
     text-shadow: 4px 4px 0 #623412, -4px -4px 0 #BD9A7A;
+    margin-top: 40px;
 }
 
 .containerButtons {
     display: flex;
-    justify-content: center;
+    justify-content:space-around;
+    margin: 0px 200px;
 }
 
-button {
+#rock, #paper, #scissors {
     padding: 20px 40px;
     background-color: var(--main-icon-color);
     color: white;
     font-size: var(--main-font-size);
     border-radius:40px;
+    border-style: none;
 }
 
-button:hover {
+#rock:hover, 
+#paper:hover,
+#scissors:hover {
     transition: transform 0.5s;
     background-color:#BD9A7A;
 }
@@ -44,7 +49,7 @@ button:hover {
 .containerScores {
     display: flex;
     justify-content: space-evenly;
-    padding: 40px 40px;
+    padding: 20px;
     margin: 25px;
     font-size: var(--main-font-size);
 }
@@ -59,13 +64,34 @@ button:hover {
     display: flex;
     justify-content: center;
     margin: 20px;
-    font-size: 75px;
+    font-size: 50px;
+}
+
+.containerPlayAgain {
+    display: flex;
+    justify-content: center;
+}
+
+.playAgainButton {
+    padding: 20px 20px;
+    background-image: linear-gradient(to left, #BD9A7A, #88AADD);
+    color: white;
+    outline: none;
+    font-size: var(--main-font-size);
+    border-radius: 40px;
+    border-style: none;
+}
+
+.playAgainButton:hover {
+    cursor: grabbing;
+	transform: scale(1.5);
+	transition: all .5s;
 }
 
 footer {
     padding: 20px 20px;
     margin-top: auto;
-    font-size: var(--main-font-size);
+    font-size: 20px;
     text-align: center;
 }
 

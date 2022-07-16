@@ -20,6 +20,7 @@ buttons.forEach((button) => {
 const containerScores = document.querySelector('.containerScores');
 const containerResults = document.querySelector('.containerResults');
 const containerGameOver = document.querySelector('.containerGameOver');
+const containerPlayAgain = document.querySelector('.containerPlayAgain');
 
 // UI - score trackers
 const playerScoreTracker = document.createElement('div');
@@ -54,41 +55,72 @@ function playRound(playerSelection, computerSelection) {
         result.textContent = 'You lose! Paper beats Rock!';
         computerScore++;
 
+        removeStyle();
+        computerScoreStyle();
         updateScore();
         checkGameOver();
     } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
         result.textContent = 'You win! Rock beats Scissors!';
         playerScore++;
 
+        removeStyle();
+        playerScoreStyle();
         updateScore();
         checkGameOver();
     } else if (playerSelection == 'paper' && computerSelection == 'rock') {
         result.textContent = 'You win! Paper beats Rock!';
         playerScore++;
 
+        removeStyle();
+        playerScoreStyle();
         updateScore();
         checkGameOver();
     } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
         result.textContent = 'You lose! Scissors beats Paper!';
         computerScore++;
 
+        removeStyle();
+        computerScoreStyle();
         updateScore();
         checkGameOver();
     } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
         result.textContent = 'You lose! Rock beats Scissors!';
         computerScore++;
 
+        removeStyle();
+        computerScoreStyle();
         updateScore();
         checkGameOver();
     } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
         result.textContent = 'You win! Scissors beats Paper!';
         playerScore++;
 
+        removeStyle();
+        playerScoreStyle();
         updateScore();
         checkGameOver();
     } else if (playerSelection == computerSelection) {
         result.textContent = 'It\'s a tie! Play again!';
+
+        removeStyle();
     }
+};
+
+function removeStyle() {
+    computerScoreTracker.removeAttribute('style');
+    playerScoreTracker.removeAttribute('style');
+};
+
+function computerScoreStyle() {
+    computerScoreTracker.style.backgroundColor = '#88AADD';
+    computerScoreTracker.style.padding = '10px';
+    computerScoreTracker.style.borderRadius = '20px';
+};
+
+function playerScoreStyle() {
+    playerScoreTracker.style.backgroundColor = '#88AADD';
+    playerScoreTracker.style.padding = '10px';
+    playerScoreTracker.style.borderRadius = '20px';
 };
 
 function updateScore() {
@@ -99,12 +131,28 @@ function updateScore() {
 function checkGameOver() {
     if (playerScore === 5 || computerScore === 5) {
         gameOverMessage();
+        playAgain();
     } else {
         return;
     }
 };
 
 function gameOverMessage() {
-    return (playerScoreTracker > computerScoreTracker) ? (gameOver.textContent = 'Game over! You won!') 
+    return playerScore > computerScore ? (gameOver.textContent = 'Game over! You won!') 
     : (gameOver.textContent = 'Game over! Computer won!');
+};
+
+function playAgain() {
+    const playAgainButton = document.createElement('button');
+    playAgainButton.classList.add('playAgainButton');
+    playAgainButton.textContent = 'Play Again?';
+    containerPlayAgain.appendChild(playAgainButton);
+
+    buttons.forEach((button) => {
+        button.style.opacity = '0';
+        });
+
+	playAgainButton.addEventListener('click', () => {
+		window.location.reload();
+	});
 };

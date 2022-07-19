@@ -38,65 +38,42 @@ gameOver.classList.add('gameOver');
 containerGameOver.appendChild(gameOver);
 
 function generateComputerSelection() {
-    const options = ['rock', 'paper', 'scissors'];
+    const options = ['Rock', 'Paper', 'Scissors'];
     let randomNumber = Math.floor(Math.random() * options.length);
     return computerSelection = options[randomNumber];
 };
 
 function playSingleRound(playerSelection, computerSelection) {
-    if (playerSelection == 'rock' && computerSelection == 'paper') {
-        result.textContent = 'You lose! Paper beats Rock!';
-        computerScore++;
+    switch (true) {
+        case (playerSelection === computerSelection):
+            result.textContent = 'It\'s a tie! Play again!';
+            removeStyle();
+            break;
 
-        removeStyle();
-        setComputerScoreStyle();
-        displayUpdatedScore();
-        checkGameOver();
-    } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
-        result.textContent = 'You win! Rock beats Scissors!';
-        playerScore++;
+        case (playerSelection === 'Rock' && computerSelection === 'Paper'):
+        case (playerSelection === 'Paper' && computerSelection === 'Scissors'):
+        case (playerSelection === 'Scissors' && computerSelection === 'Rock'):
+            result.textContent = `You lose! ${playerSelection} beats ${computerSelection}!`;
+            computerScore++;
+    
+            removeStyle();
+            setComputerScoreStyle();
+            displayUpdatedScore();
+            checkGameOver();
+            break;
+        
+        case (playerSelection === 'Rock' && computerSelection === 'Scissors'):
+        case (playerSelection === 'Paper' && computerSelection === 'Rock'):
+        case (playerSelection === 'Scissors' && computerSelection === 'Paper'):
+            result.textContent = `You win! ${playerSelection} beats ${computerSelection}!`;
+            playerScore++;
 
-        removeStyle();
-        setPlayerScoreStyle();
-        displayUpdatedScore();
-        checkGameOver();
-    } else if (playerSelection == 'paper' && computerSelection == 'rock') {
-        result.textContent = 'You win! Paper beats Rock!';
-        playerScore++;
-
-        removeStyle();
-        setPlayerScoreStyle();
-        displayUpdatedScore();
-        checkGameOver();
-    } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-        result.textContent = 'You lose! Scissors beats Paper!';
-        computerScore++;
-
-        removeStyle();
-        setComputerScoreStyle();
-        displayUpdatedScore();
-        checkGameOver();
-    } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
-        result.textContent = 'You lose! Rock beats Scissors!';
-        computerScore++;
-
-        removeStyle();
-        setComputerScoreStyle();
-        displayUpdatedScore();
-        checkGameOver();
-    } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
-        result.textContent = 'You win! Scissors beats Paper!';
-        playerScore++;
-
-        removeStyle();
-        setPlayerScoreStyle();
-        displayUpdatedScore();
-        checkGameOver();
-    } else if (playerSelection == computerSelection) {
-        result.textContent = 'It\'s a tie! Play again!';
-
-        removeStyle();
-    }
+            removeStyle();
+            setPlayerScoreStyle();
+            displayUpdatedScore();
+            checkGameOver();
+            break;
+    };
 };
 
 function removeStyle() {

@@ -121,7 +121,7 @@ function displayUpdatedScore() {
 
 function checkGameOver() {
     if (playerScore === 5 || computerScore === 5) {
-        DisplayGameOverMessage();
+        displayGameOverMessage();
         playAgain();
     } else {
         return;

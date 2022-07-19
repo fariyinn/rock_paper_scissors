@@ -113,3 +113,24 @@ footer {
     transform: rotate(180deg) scale(1.5);
     color:#BD9A7A;
 }
+
+@media (orientation: portrait) {
+    .containerButtons {
+        flex-direction: column;
+    }
+
+    #Rock,
+    #Paper,
+    #Scissors {
+        margin: 25px;
+    }
+    
+    .header {
+        font-size: 100px;
+    }
+
+    .containerScores {
+        font-size: 30px;
+        margin: 0;
+    }
+}

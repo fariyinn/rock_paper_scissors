@@ -1,10 +1,8 @@
-// global variables
 let playerScore = 0;
 let computerScore = 0;
 let playerSelection;
 let computerSelection;
 
-// UI - buttons
 const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
@@ -16,13 +14,11 @@ buttons.forEach((button) => {
     });
 });
 
-// UI - containers
 const containerScores = document.querySelector('.containerScores');
 const containerResults = document.querySelector('.containerResults');
 const containerGameOver = document.querySelector('.containerGameOver');
 const containerPlayAgain = document.querySelector('.containerPlayAgain');
 
-// UI - score trackers
 const playerScoreTracker = document.createElement('div');
 playerScoreTracker.classList.add('playerScoreTracker');
 playerScoreTracker.textContent = 'Your score: ' + playerScore;
@@ -33,17 +29,14 @@ computerScoreTracker.classList.add('computerScoreTracker');
 computerScoreTracker.textContent = 'Computer score: ' + computerScore;
 containerScores.appendChild(computerScoreTracker);
 
-// UI - results
 const result = document.createElement('div');
 result.classList.add('result');
 containerResults.appendChild(result);
 
-// UI - game over
 const gameOver = document.createElement('div');
 gameOver.classList.add('gameOver');
 containerGameOver.appendChild(gameOver);
 
-// functions
 function computerPlay() {
     const options = ['rock', 'paper', 'scissors'];
     let randomNumber = Math.floor(Math.random() * options.length);

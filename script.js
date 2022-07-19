@@ -10,7 +10,7 @@ buttons.forEach((button) => {
         if (playerScore == 5 || computerScore == 5) {
             return;
         }
-        playRound(button.id, computerPlay());
+        playSingleRound(button.id, generateComputerSelection());
     });
 });
 
@@ -37,60 +37,60 @@ const gameOver = document.createElement('div');
 gameOver.classList.add('gameOver');
 containerGameOver.appendChild(gameOver);
 
-function computerPlay() {
+function generateComputerSelection() {
     const options = ['rock', 'paper', 'scissors'];
     let randomNumber = Math.floor(Math.random() * options.length);
     return computerSelection = options[randomNumber];
 };
 
-function playRound(playerSelection, computerSelection) {
+function playSingleRound(playerSelection, computerSelection) {
     if (playerSelection == 'rock' && computerSelection == 'paper') {
         result.textContent = 'You lose! Paper beats Rock!';
         computerScore++;
 
         removeStyle();
-        computerScoreStyle();
-        updateScore();
+        setComputerScoreStyle();
+        displayUpdatedScore();
         checkGameOver();
     } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
         result.textContent = 'You win! Rock beats Scissors!';
         playerScore++;
 
         removeStyle();
-        playerScoreStyle();
-        updateScore();
+        setPlayerScoreStyle();
+        displayUpdatedScore();
         checkGameOver();
     } else if (playerSelection == 'paper' && computerSelection == 'rock') {
         result.textContent = 'You win! Paper beats Rock!';
         playerScore++;
 
         removeStyle();
-        playerScoreStyle();
-        updateScore();
+        setPlayerScoreStyle();
+        displayUpdatedScore();
         checkGameOver();
     } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
         result.textContent = 'You lose! Scissors beats Paper!';
         computerScore++;
 
         removeStyle();
-        computerScoreStyle();
-        updateScore();
+        setComputerScoreStyle();
+        displayUpdatedScore();
         checkGameOver();
     } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
         result.textContent = 'You lose! Rock beats Scissors!';
         computerScore++;
 
         removeStyle();
-        computerScoreStyle();
-        updateScore();
+        setComputerScoreStyle();
+        displayUpdatedScore();
         checkGameOver();
     } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
         result.textContent = 'You win! Scissors beats Paper!';
         playerScore++;
 
         removeStyle();
-        playerScoreStyle();
-        updateScore();
+        setPlayerScoreStyle();
+        displayUpdatedScore();
         checkGameOver();
     } else if (playerSelection == computerSelection) {
         result.textContent = 'It\'s a tie! Play again!';
@@ -104,31 +104,31 @@ function removeStyle() {
     playerScoreTracker.removeAttribute('style');
 };
 
-function computerScoreStyle() {
+function setComputerScoreStyle() {
     computerScoreTracker.style.backgroundColor = '#88AADD'
     computerScoreTracker.style.borderRadius = '20px';
 };
 
-function playerScoreStyle() {
+function setPlayerScoreStyle() {
     playerScoreTracker.style.backgroundColor = '#88AADD';
     playerScoreTracker.style.borderRadius = '20px';
 };
 
-function updateScore() {
+function displayUpdatedScore() {
     playerScoreTracker.textContent = 'Your score: ' + playerScore;
     computerScoreTracker.textContent = 'Computer score: ' + computerScore;
 };
 
 function checkGameOver() {
     if (playerScore === 5 || computerScore === 5) {
-        gameOverMessage();
+        DisplayGameOverMessage();
         playAgain();
     } else {
         return;
     }
 };
 
-function gameOverMessage() {
+function displayGameOverMessage() {
     return playerScore > computerScore ? (gameOver.textContent = 'Game over! You won!') 
     : (gameOver.textContent = 'Game over! Computer won!');
 };

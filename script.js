@@ -99,7 +99,7 @@ function displayUpdatedScore() {
 function checkGameOver() {
     if (playerScore === 5 || computerScore === 5) {
         displayGameOverMessage();
-        playAgain();
+        createPlayAgainButton();
     } else {
         return;
     }
@@ -110,7 +110,7 @@ function displayGameOverMessage() {
     : (gameOver.textContent = 'Game over! Computer won!');
 };
 
-function playAgain() {
+function createPlayAgainButton() {
     const playAgainButton = document.createElement('button');
     playAgainButton.classList.add('playAgainButton');
     playAgainButton.textContent = 'Play Again?';

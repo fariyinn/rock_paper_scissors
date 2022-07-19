@@ -112,14 +112,12 @@ function removeStyle() {
 };
 
 function computerScoreStyle() {
-    computerScoreTracker.style.backgroundColor = '#88AADD';
-    computerScoreTracker.style.padding = '10px';
+    computerScoreTracker.style.backgroundColor = '#88AADD'
     computerScoreTracker.style.borderRadius = '20px';
 };
 
 function playerScoreStyle() {
     playerScoreTracker.style.backgroundColor = '#88AADD';
-    playerScoreTracker.style.padding = '10px';
     playerScoreTracker.style.borderRadius = '20px';
 };
 

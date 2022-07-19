@@ -56,6 +56,11 @@ body {
     font-size: var(--main-font-size);
 }
 
+.computerScoreTracker,
+.playerScoreTracker {
+    padding: 10px;
+}
+
 .containerResults {
     display: flex;
     justify-content: center;

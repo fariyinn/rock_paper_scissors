@@ -30,9 +30,9 @@ body {
     margin: 0px 200px;
 }
 
-#rock, 
-#paper, 
-#scissors {
+#Rock, 
+#Paper, 
+#Scissors {
     padding: 20px 40px;
     background-color: var(--main-icon-color);
     color: white;
@@ -41,9 +41,9 @@ body {
     border-style: none;
 }
 
-#rock:hover, 
-#paper:hover,
-#scissors:hover {
+#Rock:hover, 
+#Paper:hover,
+#Scissors:hover {
     transition: transform 0.5s;
     background-color:#BD9A7A;
 }

@@ -8,6 +8,7 @@
 }
 
 body {
+    position: relative;
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -115,6 +116,10 @@ footer {
 }
 
 @media (orientation: portrait) {
+    body {
+        min-height: 50vh;
+    }
+
     .containerButtons {
         flex-direction: column;
     }
@@ -132,5 +137,11 @@ footer {
     .containerScores {
         font-size: 30px;
         margin: 0;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
     }
 }

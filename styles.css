@@ -30,7 +30,9 @@ body {
     margin: 0px 200px;
 }
 
-#rock, #paper, #scissors {
+#rock, 
+#paper, 
+#scissors {
     padding: 20px 40px;
     background-color: var(--main-icon-color);
     color: white;

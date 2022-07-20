@@ -13,7 +13,7 @@ body {
     flex-direction: column;
     padding: 0;
     margin: 0;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 .header {
@@ -97,10 +97,10 @@ body {
 }
 
 footer {
-    padding: 20px 20px;
     margin-top: auto;
-    font-size: 20px;
-    text-align: center;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
 }
 
 #github {
@@ -116,10 +116,6 @@ footer {
 }
 
 @media (orientation: portrait) {
-    body {
-        min-height: 50vh;
-    }
-
     .containerButtons {
         flex-direction: column;
     }
@@ -129,19 +125,12 @@ footer {
     #Scissors {
         margin: 25px;
     }
-    
-    .header {
-        font-size: 100px;
-    }
 
     .containerScores {
-        font-size: 30px;
         margin: 0;
     }
 
     footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
+        margin-top: 3vh;
     }
 }

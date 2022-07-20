@@ -116,6 +116,10 @@ footer {
 }
 
 @media (orientation: portrait) {
+    .header {
+        font-size: 12vw;
+    }
+
     .containerButtons {
         flex-direction: column;
     }
@@ -123,7 +127,7 @@ footer {
     #Rock,
     #Paper,
     #Scissors {
-        margin: 25px;
+        margin: 1.5vh;
     }
 
     .containerScores {

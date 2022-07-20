@@ -117,7 +117,7 @@ footer {
 
 @media (orientation: portrait) {
     .header {
-        font-size: 12vw;
+        font-size: 10vw;
     }
 
     .containerButtons {

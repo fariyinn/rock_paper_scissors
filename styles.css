@@ -108,6 +108,7 @@ body {
 footer {
     margin-top: auto;
     font-size: var(--main-footer-font-size);
+    color: var(--main-button-text-color);
     display: flex;
     justify-content: center;
 }

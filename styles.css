@@ -21,11 +21,13 @@ body {
     padding: 0;
     margin: 0;
     height: 100vh;
+    background-color: var(--main-background-color);
 }
 
 .header {
     display: flex;
     justify-content: center;
+    text-align: center;
     color: var(--main-header-color);
     font-size: var(--main-header-font-size);
     text-shadow: 1px 3px 0 var(--main-header-second-color), -2px -3px 0 var(--main-header-third-color);

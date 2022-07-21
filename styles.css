@@ -6,12 +6,43 @@
     --main-header-color: #88AADD;
     --main-header-second-color:#623412;
     --main-header-third-color: #BD9A7A;
-    --main-button-text-color: #FFF;
+    --main-button-font-color: #FFF;
+    --main-body-font-color: #000;
     font-family:'Yanone Kaffeesatz', helvetica, sans-serif;
     --main-font-size: 30px;
-    --main-header-font-size: 125px;
+    --main-header-font-size: 120px;
     --main-game-over-font-size: 50px;
-    --main-footer-font-size: 25px;
+    --main-body-font-size: 25px;
+}
+
+.containerWildMode {
+    display: flex;
+    justify-content: center;
+    margin: -40px 0 50px 0;
+}
+
+#wildMode {
+    font-size: var(--main-font-size);
+    font-family: inherit;
+    text-align: center;
+    padding: 10px 40px;
+    border-radius: 60px;
+    border-style: none;
+    cursor: progress;
+    background:
+        linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+        linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+        linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+}
+
+.wildMode {
+    --main-background-color: #000;
+    --main-button-background-color: #9B6A8C;
+    --main-header-color: #553950;
+    --main-header-second-color: #9B6A8C;
+    --main-header-third-color: #5ED6C1;
+    --main-button-font-color: #5300EA;
+    --main-body-font-color: #5300EA;
 }
 
 body {
@@ -36,7 +67,7 @@ body {
 
 .containerButtons {
     display: flex;
-    justify-content:space-around;
+    justify-content:space-evenly;
     margin: 0px 200px;
 }
 
@@ -45,8 +76,9 @@ body {
 #Scissors {
     padding: 20px 40px;
     background-color: var(--main-button-background-color);
-    color: var(--main-button-text-color);
+    color: var(--main-button-font-color);
     font-size: var(--main-font-size);
+    font-family: inherit;
     border-radius:40px;
     border-style: none;
 }
@@ -64,6 +96,7 @@ body {
     padding: 20px;
     margin: 25px;
     font-size: var(--main-font-size);
+    color: var(--main-body-font-color);
 }
 
 .computerScoreTracker,
@@ -75,6 +108,7 @@ body {
     display: flex;
     justify-content: center;
     font-size: var(--main-font-size);
+    color: var(--main-body-font-color);
 }
 
 .containerGameOver {
@@ -82,6 +116,7 @@ body {
     justify-content: center;
     margin: 20px;
     font-size: var(--main-game-over-font-size);
+    color: var(--main-body-font-color);
 }
 
 .containerPlayAgain {
@@ -91,10 +126,11 @@ body {
 
 .playAgainButton {
     padding: 20px 20px;
-    background-image: linear-gradient(to left, var(--main-header-third-color), var(--main-header-color));
-    color: var(--main-button-text-color);
+    background-image: linear-gradient(to left, var(--main-header-third-color), var(--main-header-second-color), var(--main-header-color));
+    color: var(--main-button-font-color);
     outline: none;
     font-size: var(--main-font-size);
+    font-family: inherit;
     border-radius: 40px;
     border-style: none;
 }
@@ -107,8 +143,8 @@ body {
 
 footer {
     margin-top: auto;
-    font-size: var(--main-footer-font-size);
-    color: var(--main-button-text-color);
+    font-size: var(--main-body-font-size);
+    color: var(--main-body-font-color);
     display: flex;
     justify-content: center;
 }

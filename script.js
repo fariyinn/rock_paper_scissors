@@ -3,6 +3,12 @@ let computerScore = 0;
 let playerSelection;
 let computerSelection;
 
+const wildMode = document.querySelector('#wildMode');
+
+wildMode.addEventListener('click', () => {
+    document.body.classList.toggle('wildMode');
+});
+
 const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
@@ -82,12 +88,12 @@ function removeStyle() {
 };
 
 function setComputerScoreStyle() {
-    computerScoreTracker.style.backgroundColor = '#88AADD'
+    computerScoreTracker.style.backgroundColor = '#FFB700';
     computerScoreTracker.style.borderRadius = '20px';
 };
 
 function setPlayerScoreStyle() {
-    playerScoreTracker.style.backgroundColor = '#88AADD';
+    playerScoreTracker.style.backgroundColor = '#FFB700';
     playerScoreTracker.style.borderRadius = '20px';
 };
 
